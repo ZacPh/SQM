@@ -16,6 +16,7 @@
     <path id="Simple Chat Server.classpath">
         <pathelement location="bin"/>
         <path refid="JUnit 4.libraryclasspath"/>
+        <pathelement location="../../eclipse/plugins/org.junit_4.11.0.v201303080030/junit.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -57,6 +58,23 @@
         <mkdir dir="${junit.output.dir}"/>
         <junit fork="yes" printsummary="withOutAndErr">
             <formatter type="xml"/>
+            <test name="g54ubi.chat.server.MyTestTest" todir="${junit.output.dir}"/>
+            <classpath refid="Simple Chat Server.classpath"/>
+        </junit>
+    </target>
+    <target name="AllTests">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="g54ubi.chat.server.AllTests" todir="${junit.output.dir}"/>
+            <classpath refid="Simple Chat Server.classpath"/>
+        </junit>
+    </target>
+    <target name="Simple Chat Server">
+        <mkdir dir="${junit.output.dir}"/>
+        <junit fork="yes" printsummary="withOutAndErr">
+            <formatter type="xml"/>
+            <test name="g54ubi.chat.server.AllTests" todir="${junit.output.dir}"/>
             <test name="g54ubi.chat.server.MyTestTest" todir="${junit.output.dir}"/>
             <classpath refid="Simple Chat Server.classpath"/>
         </junit>
