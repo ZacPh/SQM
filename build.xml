@@ -16,17 +16,9 @@
     <path id="Simple Chat Server.classpath">
         <pathelement location="bin"/>
         <path refid="JUnit 4.libraryclasspath"/>
-        <pathelement location="../../eclipse/plugins/org.junit_4.11.0.v201303080030/junit.jar"/>
-    </path>
-	<path id="JUnit 4.libraryclasspath">
-        <pathelement location="...\plugins\org.junit_4.11.0.v201303080030\junit.jar"/>
-        <pathelement location="...\plugins\org.hamcrest.core_1.3.0.v201303031735.jar"/>
-        <pathelement location="...\lib\ant-junit4.jar"/>        
-    </path>
-    <path id="Ant1.classpath">
-        <pathelement location="bin"/>
-        <pathelement location="."/>
-        <path refid="JUnit 4.libraryclasspath"/>
+        <pathelement location="lib/ant-junit4.jar"/>
+        <pathelement location="lib/hamcrest-core.jar"/>
+        <pathelement location="lib/junit.jar"/>
     </path>
     <target name="init">
         <mkdir dir="bin"/>
@@ -87,7 +79,6 @@
             <formatter type="xml"/>
             <test name="g54ubi.chat.server.test" todir="${junit.output.dir}"/>
             <classpath refid="Simple Chat Server.classpath"/>
-			  <classpath refid="Ant1.classpath"/>
         </junit>
     </target>
     <target name="junitreport">
